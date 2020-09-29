@@ -5,9 +5,13 @@ import Calendar from "react-calendar";
 function App() {
   const [date, setDate] = useState(new Date());
 
+  const onChange = (date) => {
+    setDate(date);
+  };
   return (
     <div>
-      <Calendar></Calendar>
+      <Calendar onChange={onChange} value={date} Calendar />
+      {date.toString()}
     </div>
   );
 }
